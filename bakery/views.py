@@ -20,8 +20,8 @@ class UserCreate(generics.CreateAPIView):
     permission_classes = (AllowAny,)
 
 
-class AvailableProductsView(generics.ListCreateAPIView):
-    # permission_classes = (IsAuthenticated,)
+class AvailableProductsView(generics.ListAPIView):
+    permission_classes = (IsAuthenticated,)
     queryset = BakeryItem.objects.all()
     serializer_class = BakeryItemSerializer
     http_method_names = ['get']
